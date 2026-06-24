@@ -1,0 +1,1177 @@
+/* =========================
+   CONFIGURAÇÕES GERAIS
+========================= */
+
+:root{
+
+    --rosa:#ff5ea8;
+    --rosa-claro:#ffe7f3;
+
+    --roxo:#6e36c7;
+    --lavanda:#bca4ff;
+
+    --azul:#8ed4ff;
+
+    --texto:#4c2f7c;
+
+    --fundo:
+    linear-gradient(
+        180deg,
+        #fff8fc 0%,
+        #fff2f8 30%,
+        #f8f0ff 60%,
+        #fff8fc 100%
+    );
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'DM Sans',sans-serif;
+
+    background:var(--fundo);
+
+    overflow-x:hidden;
+
+    color:var(--texto);
+
+    position:relative;
+}
+
+h1,h2,h3,h4{
+    font-family:'Playfair Display',serif;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar{
+    position:relative;
+    z-index:999;
+}
+
+.logo img{
+    width:180px;
+}
+
+.nav-link{
+
+    color:var(--texto)!important;
+
+    font-weight:600;
+
+    margin:0 15px;
+}
+
+.nav-link:hover{
+    color:var(--rosa)!important;
+}
+
+/* =========================
+   BOTÕES
+========================= */
+
+.btn-donut{
+
+    background:
+    linear-gradient(
+        135deg,
+        #ff5ea8,
+        #ff7dc0
+    );
+
+    color:white;
+
+    padding:14px 32px;
+
+    border-radius:50px;
+
+    font-weight:700;
+
+    border:none;
+
+    text-decoration:none;
+
+    display:inline-block;
+
+    transition:.3s;
+}
+
+.btn-donut:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+    0 15px 30px rgba(255,94,168,.3);
+
+    color:white;
+}
+
+.btn-outline-donut{
+
+    border:2px solid #ff7dc0;
+
+    color:#ff5ea8;
+
+    padding:14px 32px;
+
+    border-radius:50px;
+
+    text-decoration:none;
+
+    font-weight:700;
+
+    margin-left:10px;
+}
+
+.btn-outline-donut:hover{
+
+    background:#ff5ea8;
+
+    color:white;
+}
+
+/* =========================
+   HERO
+========================= */
+
+
+.hero{
+
+    min-height:70vh;
+
+    display:flex;
+
+    align-items:center;
+
+    position:relative;
+
+      background:
+    radial-gradient(
+        circle at 75% 40%,
+        rgba(255,94,168,.08),
+        transparent 35%
+    );
+    
+}
+
+
+.badge-lab{
+
+    display:inline-block;
+
+    background:#fff;
+
+    color:#ff5ea8;
+
+    padding:12px 20px;
+
+    border-radius:50px;
+
+    margin-bottom:30px;
+
+    box-shadow:
+    0 5px 20px rgba(0,0,0,.05);
+}
+
+.hero h1{
+
+     font-size:105px;
+
+    line-height:1;
+
+    font-weight:800;
+
+    margin-bottom:25px;
+}
+
+.hero h1 span{
+    color:var(--rosa);
+}
+
+.hero p{
+
+    font-size:1.3rem;
+
+    max-width:550px;
+
+    margin-bottom:30px;
+}
+
+.hero-buttons{
+    margin-top:20px;
+}
+
+/* =========================
+   MASCOTE
+========================= */
+
+.mascote{
+
+     width:600px;
+   
+
+    max-width:none;
+
+    transform:
+    translateY(60px);
+
+    animation:flutuar 5s ease-in-out infinite;
+
+    filter:
+    drop-shadow(
+    0 30px 50px rgba(255,94,168,.25)
+    );
+}
+
+.frase-final{
+
+    position:absolute;
+
+    bottom:20px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    color:#ff5ea8;
+
+    font-weight:700;
+
+}
+
+
+
+   @keyframes flutuar{
+
+    0%{
+        transform:translateY(60px);
+    }
+
+    50%{
+        transform:translateY(45px);
+    }
+
+    100%{
+        transform:translateY(60px);
+    }
+
+
+}
+
+/* =========================
+   MOLÉCULAS
+========================= */
+
+.molecula{
+
+    position:absolute;
+
+    opacity:.5;
+
+    z-index:-1;
+
+    animation:girar 20s linear infinite;
+}
+
+.molecula1{
+
+    width:120px;
+
+    top:150px;
+
+    left:50px;
+}
+
+.molecula2{
+
+    width:140px;
+
+    top:700px;
+
+    right:100px;
+}
+
+.molecula3{
+
+    width:180px;
+
+    top:1200px;
+
+    left:100px;
+}
+
+@keyframes girar{
+
+    from{
+        transform:rotate(0deg);
+    }
+
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+/* =========================
+   TUBO ROSA
+========================= */
+
+.tubo-section{
+
+    position:relative;
+
+     height:0;
+}
+
+.tubo-rosa{
+
+    position:absolute;
+
+    left:-80px;
+
+    width:450px;
+}
+
+/* =========================
+   COMO FUNCIONA
+========================= */
+
+.como-funciona{
+
+   padding:20px 0 80px;
+}
+
+.titulo{
+
+    text-align:center;
+
+    margin-bottom:70px;
+}
+
+.titulo h2{
+
+    font-size:4rem;
+}
+
+.titulo span{
+    color:var(--rosa);
+}
+
+.linha-processo{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    text-align:center;
+
+    gap:20px;
+}
+
+
+.laboratorio-flow{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+
+}
+
+.passo{
+
+    width:180px;
+
+    text-align:center;
+
+}
+
+.icone-passo{
+
+    width:110px;
+
+    height:110px;
+
+    margin:auto;
+
+    border-radius:50%;
+
+    background:white;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:50px;
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,.08);
+
+    margin-bottom:20px;
+
+    transition:.3s;
+
+}
+
+.icone-passo:hover{
+
+    transform:
+    translateY(-8px);
+
+    box-shadow:
+    0 15px 30px rgba(255,94,168,.2);
+
+}
+
+.linha{
+
+    width:80px;
+
+    height:4px;
+
+    border-radius:50px;
+
+    background:
+    linear-gradient(
+        90deg,
+        #ff5ea8,
+        #bca4ff
+    );
+
+}
+
+.passo h4{
+
+    color:#6e36c7;
+
+    margin-bottom:5px;
+
+}
+
+.passo p{
+
+    font-size:.9rem;
+
+    color:#666;
+
+}
+
+/* =========================
+   MONTE DONUT
+========================= */
+
+
+
+.monte-donut h2{
+
+    font-size:4rem;
+     margin-bottom:15px;
+}
+
+.monte-donut span{
+    color:var(--rosa);
+}
+
+
+
+    .card-donut{
+
+    
+
+    background:transparent;
+
+    border-radius:50px;
+
+  
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    position:relative;
+
+    max-width:1000px;
+
+    margin:auto;
+
+
+
+
+}
+
+
+
+.sobre{
+
+    padding:80px 0;
+
+}
+
+.donut-sobre{
+
+    position:absolute;
+
+    width:130px;
+
+    top:-40px;
+
+    right:-60px;
+
+    transform:rotate(25deg);
+
+}
+
+
+.donut-sobre2{
+
+    position:absolute;
+
+    width:130px;
+
+   bottom:-40px;
+
+    left:-40px;
+
+   transform: rotate(-20deg);
+
+}
+
+.card-sobre{
+
+       position:relative;
+
+    background:white;
+
+    border-radius:40px;
+
+    padding:60px;
+
+    max-width:900px;
+
+    margin:auto;
+
+    text-align:center;
+
+    box-shadow:
+    0 20px 40px rgba(0,0,0,.06);
+
+     background:
+    linear-gradient(
+        135deg,
+        #ffffff,
+        #fff7fc
+    );
+
+}
+
+.badge-sobre{
+
+    display:inline-block;
+
+    background:#ffe7f3;
+
+    color:#ff5ea8;
+
+    padding:12px 25px;
+
+    border-radius:50px;
+
+    font-weight:700;
+
+    margin-bottom:25px;
+
+}
+
+.card-sobre h2{
+
+    font-size:3rem;
+
+    color:#6e36c7;
+
+    margin-bottom:25px;
+
+}
+
+.card-sobre p{
+
+     font-size:1.15rem;
+
+    line-height:1.8;
+
+    color:#666;
+
+    max-width:650px;
+
+    margin:auto;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@keyframes rodar{
+
+    from{
+        transform:rotate(0deg);
+    }
+
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+/* =========================
+   BENEFÍCIOS
+========================= */
+
+.beneficios{
+
+    padding:80px 0 120px;
+}
+
+.beneficios h5{
+
+    background:white;
+
+    padding:20px;
+
+    border-radius:20px;
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,.05);
+
+    height:100%;
+}
+
+/* =========================
+   BOLHAS DECORATIVAS
+========================= */
+
+
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media(max-width:991px){
+
+    .hero{
+        text-align:center;
+    }
+
+    .hero h1{
+        font-size:3.8rem;
+    }
+
+    .mascote{
+
+        width:400px;
+
+        margin-top:40px;
+    }
+
+    
+
+    .card-donut{
+
+        background:white;
+
+    border-radius:40px;
+
+    padding:50px;
+
+    min-height:650px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:40px;
+
+    box-shadow:
+    0 20px 40px rgba(0,0,0,.08);
+    }
+
+    .donut-principal img{
+        width:250px;
+    }
+}
+
+@media(max-width:768px){
+
+    .hero h1{
+        font-size:3rem;
+    }
+
+    .titulo h2,
+    .monte-donut h2{
+
+        font-size:2.5rem;
+    }
+
+    .btn-outline-donut{
+
+        display:block;
+
+        margin-top:15px;
+
+        margin-left:0;
+    }
+}
+
+/* ============================
+BOLHAS
+============================ */
+
+.bolha{
+
+    position:absolute;
+
+    z-index:1;
+
+    animation:
+    flutuarBolha 10s ease-in-out infinite;
+
+    opacity:.7;
+
+}
+
+.bolha1{
+
+    width:220px;
+
+    top:150px;
+
+    right:50px;
+
+}
+
+.bolha2{
+
+    width:180px;
+
+    top:900px;
+
+    left:-50px;
+
+}
+
+.bolha3{
+
+    width:250px;
+
+    top:1700px;
+
+    right:20px;
+
+}
+
+@keyframes flutuarBolha{
+
+0%{
+transform:
+translateY(0px);
+}
+
+50%{
+transform:
+translateY(-30px);
+}
+
+100%{
+transform:
+translateY(0px);
+}
+
+}
+
+.molecula1{
+    width:120px;
+}
+
+.molecula2{
+    width:150px;
+}
+
+.molecula3{
+    width:130px;
+}
+
+.donut1{
+
+    position:absolute;
+
+    width:180px;
+
+    top:120px;
+
+    right:150px;
+
+    opacity:.12;
+
+    z-index:0;
+
+}
+
+
+
+.ingredientes{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:20px;
+
+}
+
+.ingrediente{
+
+    width:140px;
+
+    height:140px;
+
+     background:white;
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,.06);
+
+    border-radius:30px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,.06);
+
+    transition:.3s;
+
+    cursor:pointer;
+
+}
+
+.ingrediente:hover{
+
+    transform:translateY(-6px);
+    background-color: #ff5ea8;
+    color: white;
+    box-shadow:
+    0 15px 30px rgb(137, 2, 70);
+
+}
+
+.ingrediente img{
+
+    width:55px;
+
+    margin-bottom:8px;
+
+}
+
+.ingrediente span{
+
+    font-size:.85rem;
+
+    font-weight:600;
+
+    color:#6a4c93;
+
+}
+
+
+.ingrediente span:hover{
+    color: white;
+}
+
+.donut-centro{
+
+    flex:1;
+
+    text-align:center;
+
+}
+
+.donut-centro h3{
+
+    font-size:2rem;
+
+    margin-bottom:30px;
+
+    color:#6a4c93;
+
+}
+
+.donut-main{
+    margin-top: 20px;
+
+      width:550px;
+
+    filter:
+    drop-shadow(
+    0 25px 40px rgba(255,94,168,.25)
+    );
+
+    animation:
+    rodar 25s linear infinite;
+
+}
+
+.donut-centro p{
+
+    margin-top:20px;
+
+    color:#ff5ea8;
+
+    font-weight:600;
+
+}
+
+
+.ingrediente:hover{
+    transform:translateY(-8px) scale(1.05);
+}
+
+
+.topo-donut{
+    padding-top:40px;
+    text-align:center;
+
+    max-width:800px;
+
+    margin:0 auto 20px;
+
+}
+
+.topo-donut h2{
+
+    font-size:5rem;
+
+    margin-bottom:20px;
+
+}
+
+.topo-donut span{
+
+    color:var(--rosa);
+
+}
+
+.topo-donut p{
+
+    font-size:1.2rem;
+
+    max-width:650px;
+
+    margin:0 auto 30px;
+
+}
+
+.titulo-forma{
+      position:absolute;
+
+    top:25px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    color:#6e36c7;
+}
+
+
+/* =========================
+   ONDA RODAPÉ
+========================= */
+
+.onda-rodape{
+
+    margin-top:120px;
+
+    line-height:0;
+
+}
+
+.onda-rodape svg{
+
+    width:100%;
+
+    height:200px;
+
+    display:block;
+     
+
+}
+
+/* =========================
+   RODAPÉ
+========================= */
+
+.rodape{
+    
+
+    background:#ff5ea8;
+
+    text-align:center;
+
+    padding:10px 0;
+
+    color:white;
+
+}
+
+
+
+
+.logo-rodape{
+
+    width:250px;
+
+    margin-bottom:25px;
+
+    
+
+}
+
+.rodape h3{
+
+    font-size:2rem;
+
+    margin-bottom:15px;
+
+}
+
+.rodape p{
+
+    font-size:1.1rem;
+
+    opacity:.9;
+
+    margin-bottom:35px;
+
+}
+
+.linha-rodape{
+
+    width:180px;
+
+    height:2px;
+
+    background:
+    rgba(255,255,255,.4);
+
+    margin:0 auto 25px;
+
+}
+
+.copyright{
+
+    font-size:.9rem;
+
+    opacity:.8;
+
+}
+
+.sparkle{
+
+    position:fixed;
+
+    font-size:25px;
+
+    animation:piscar 2.5s forwards;
+
+    pointer-events:none;
+
+    z-index:9999;
+
+    filter:
+    drop-shadow(0 0 8px #fff)
+    drop-shadow(0 0 15px #ff5ea8);
+
+}
+
+@keyframes piscar{
+
+    0%{
+        opacity:0;
+        transform:scale(.5);
+    }
+
+    50%{
+        opacity:1;
+    }
+
+    100%{
+        opacity:0;
+        transform:scale(2);
+    }
+}
+
+
+.confete{
+
+    position:fixed;
+
+    top:-20px;
+
+    font-size:20px;
+
+    animation:cair 5s linear;
+
+    pointer-events:none;
+
+    z-index:9999;
+
+}
+
+@keyframes cair{
+
+    from{
+        transform:
+        translateY(-50px)
+        rotate(0deg);
+    }
+
+    to{
+        transform:
+        translateY(110vh)
+        rotate(360deg);
+    }
+}
