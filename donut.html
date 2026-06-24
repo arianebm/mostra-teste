@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donuts Lab</title>
+    <link rel="stylesheet" href="donuts.css">
+    <link rel="icon" type="image/png" href="https://png.pngtree.com/png-clipart/20250502/original/pngtree-donut-delight-png-image_20934424.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+   
+</head>
+<body class="fundo">
+
+
+<div class="container-fluid">
+    <img src="banner.png" style="width: 100%; margin-bottom: 150px;" class="banner">
+    </div>
+
+    <div id="sparkles"></div>
+
+<div class="main-container">
+
+    
+    <div class="row g-5 caixa  text-center">
+        <div class="col-md-7">
+            <h1 class="title-main">   Crie sua    <span class="rosa">fórmula</span>    perfeita</h1><br>
+            <p class="mb-4">Escolha os ingredientes do seu jeito! 🍩</p>
+
+            <div id="identificacao">
+                <div class="section-title">🧪 Cientista: </div>
+                <input type="text" id="cliente-nome" class="input-nome" placeholder="Digite seu nome aqui...">
+            </div>
+
+            <div id="massa-group">
+                <div class="section-title">🍩 1. Massa</div>
+                <button class="btn btn-option active" data-id="baunilha" onclick="selecionar('massa', 'baunilha', 'Baunilha', this)">  <img src="massa-baunilha.png" class="ingrediente-img"><span>Baunilha</span>
+                <button class="btn btn-option" data-id="chocolate" onclick="selecionar('massa', 'chocolate', 'Chocolate', this)"> <img src="massa-chocolate.png" class="ingrediente-img"> <span>Chocolate</span> </button>
+                <button class="btn btn-option" data-id="redvelvet" onclick="selecionar('massa', 'redvelvet', 'Red Velvet', this)"> <img src="massa-red.png" class="ingrediente-img"><br> <span>Red Velvet</span> </button>
+                </button>
+            </div>
+
+            <div id="cobertura-group">
+                <div class="section-title">🍓 2. Cobertura</div>
+                <button class="btn btn-option" data-id="chocolate" onclick="selecionar('cobertura', 'chocolate', 'Chocolate', this)"><img src="cobertura-chocolate.png" class="ingrediente-img"><span>Chocolate</span></button>
+                <button class="btn btn-option" data-id="morango" onclick="selecionar('cobertura', 'morango', 'Morango', this)"><img src="cobertura-morango.png" class="ingrediente-img"><span>Morango</span></button>
+                <button class="btn btn-option" data-id="ninho" onclick="selecionar('cobertura', 'ninho', 'Ninho', this)"><img src="cobertura-ninho.png" class="ingrediente-img"><span>Ninho</span></button>
+                <button class="btn btn-option active" data-id="sem" onclick="selecionar('cobertura', 'sem', 'Nenhuma', this)"><img src="cobertura-sem.png" class="ingrediente-img"><span>Nenhuma</span></button>
+            </div>
+
+            <div id="topping-group">
+                <div class="section-title">🌈 3. Topping</div>
+                <button class="btn btn-option" data-id="granulado" onclick="selecionar('topping', 'granulado', 'Granulado', this)"><img src="top-granulado.png" class="ingrediente-img"><span>Granulado</span></button>
+                <button class="btn btn-option" data-id="confete" onclick="selecionar('topping', 'confete', 'Confete', this)"><img src="top-confete.png" class="ingrediente-img"><span>Confete</span></button>
+                <button class="btn btn-option" data-id="amendoim" onclick="selecionar('topping', 'amendoim', 'Amendoim', this)"><img src="top-amendoim.png" class="ingrediente-img"><span>Amendoim</span></button>
+                <button class="btn btn-option active" data-id="sem" onclick="selecionar('topping', 'sem', 'Nenhum', this)"><img src="top-nenhum.png" class="ingrediente-img"><span>Nenhum</span></button>
+            </div>
+        </div>
+
+        <div class="col-md-5">
+            <div class="summary-card text-center">
+                <div class="viewer-container">
+                    <img id="donut-img" src="baunilha.png" alt="Preview">
+                </div>
+                <h4 class="fw-bold text-center">MEU DONUT EXCLUSIVO 💖</h4>
+                <ul class="summary-list">
+                    <li>💖 <b>Massa:</b> <span id="resumo-massa">Baunilha</span></li>
+                    <li>💖 <b>Cobertura:</b> <span id="resumo-cobertura">Nenhuma</span></li>
+                    <li>💖 <b>Topping:</b> <span id="resumo-topping">Nenhum</span></li>
+                </ul>
+                <span class="price-tag text-center">💰 R$ <span id="resumo-preco">10,00</span></span>
+                <button class="btn-finalizar" onclick="finalizarPedido()">
+                    CRIAR MEU EXPERIMENTO! 🫧
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="confirmacao-overlay">
+    <div class="mensagem-alerta">
+        <h2>PARABÉNS, <span id="msg-nome-cliente">CLIENTE</span>! 🎉</h2>
+        <p>Seu pedido foi recebido com sucesso e logo estará pronto!</p>
+        <button class="btn-fechar" onclick="resetarPedido()">OK, ENTENDI!</button>
+    </div>
+</div>
+
+ <!-- ONDA -->
+
+<div class="onda-rodape">
+
+    <svg viewBox="0 0 1440 180" preserveAspectRatio="none">
+
+        <path fill="#ff5ea8"
+        d="M0,32L48,53.3C96,75,192,117,288,117.3C384,117,480,75,576,69.3C672,64,768,96,864,106.7C960,117,1056,107,1152,90.7C1248,75,1344,53,1392,42.7L1440,32L1440,320L0,320Z">
+        </path>
+
+    </svg>
+
+</div>
+
+<footer class="rodape" id="contato">
+
+    <div class="container">
+
+        
+
+        <img src="logo.png" class="logo-rodape">
+
+        <h3>
+            Onde sabor e imaginação se encontram.
+        </h3>
+
+        <p>
+            Criando experiências deliciosas,
+            uma fórmula de cada vez.
+        </p>
+
+        <div class="linha-rodape"></div>
+
+        <span class="copyright">
+            © 2026 Donut Lab • Todos os direitos reservados
+        </span>
+
+    </div>
+
+</footer>
+
+<script>
+    let escolhas = { massa: 'baunilha', cobertura: 'sem', topping: 'sem' };
+    let nomesExibicao = { massa: 'Baunilha', cobertura: 'Nenhuma', topping: 'Nenhum' };
+
+    function selecionar(categoria, id, nome, el) {
+        escolhas[categoria] = id;
+        nomesExibicao[categoria] = nome;
+        
+        // Remove active de todos os botões do grupo específico
+        const botoes = document.getElementById(categoria + '-group').querySelectorAll('.btn-option');
+        botoes.forEach(btn => btn.classList.remove('active'));
+        
+        // Adiciona active no clicado
+        el.classList.add('active');
+        
+        atualizarPedido();
+    }
+
+    function atualizarPedido() {
+        let preco = 10.00;
+        
+        // Regras de Preço
+        if (escolhas.cobertura === 'sem' && escolhas.topping !== 'sem') {
+            preco = 15.00;
+        } else if (escolhas.cobertura !== 'sem' && escolhas.topping === 'sem') {
+            preco = 18.00;
+        } else if (escolhas.cobertura !== 'sem' && escolhas.topping !== 'sem') {
+            preco = 25.00;
+        } else {
+            preco = 10.00;
+        }
+
+        // Atualizar Textos
+        document.getElementById('resumo-massa').innerText = nomesExibicao.massa;
+        document.getElementById('resumo-cobertura').innerText = nomesExibicao.cobertura;
+        document.getElementById('resumo-topping').innerText = nomesExibicao.topping;
+        document.getElementById('resumo-preco').innerText = preco.toFixed(2).replace('.', ',');
+
+        // --- LÓGICA DE IMAGEM CORRIGIDA PARA BATER COM AS SUAS FOTOS ---
+        let cobFile = escolhas.cobertura === 'sem' ? 'nenhum' : escolhas.cobertura;
+        let topFile = escolhas.topping === 'sem' ? 'nenhum' : escolhas.topping;
+
+        let arq = "";
+        
+        // Se não tem nada além da massa, usa só o nome da massa (ex: baunilha.png, redvelvet.png)
+        if (escolhas.cobertura === 'sem' && escolhas.topping === 'sem') {
+            arq = `${escolhas.massa}.png`;
+        } else {
+            // Para as combinações, segue o padrão exato da sua pasta: massa_cobertura_topping.png
+            arq = `${escolhas.massa}_${cobFile}_${topFile}.png`;
+        }
+
+        const img = document.getElementById('donut-img');
+        img.style.opacity = '0.3';
+        setTimeout(() => { 
+            img.src = arq; 
+            img.style.opacity = '1'; 
+        }, 150);
+    }
+
+    function finalizarPedido() {
+        const nomeInput = document.getElementById('cliente-nome').value;
+        document.getElementById('msg-nome-cliente').innerText = nomeInput.trim() !== "" ? nomeInput.toUpperCase() : "CLIENTE";
+        
+        const overlay = document.getElementById('confirmacao-overlay');
+        overlay.style.display = 'flex';
+        setTimeout(() => overlay.classList.add('show'), 10);
+    }
+
+    function resetarPedido() {
+        const overlay = document.getElementById('confirmacao-overlay');
+        overlay.classList.remove('show');
+        setTimeout(() => overlay.style.display = 'none', 300);
+
+        // Reset Nome
+        document.getElementById('cliente-nome').value = "";
+
+        // Reset Estado
+        escolhas = { massa: 'baunilha', cobertura: 'sem', topping: 'sem' };
+        nomesExibicao = { massa: 'Baunilha', cobertura: 'Nenhuma', topping: 'Nenhum' };
+
+        // Reset Botões Visualmente
+        document.querySelectorAll('.btn-option').forEach(btn => btn.classList.remove('active'));
+        
+        // Reativar os padrões iniciais
+        document.querySelector('#massa-group [data-id="baunilha"]').classList.add('active');
+        document.querySelector('#cobertura-group [data-id="sem"]').classList.add('active');
+        document.querySelector('#topping-group [data-id="sem"]').classList.add('active');
+
+        atualizarPedido();
+    }
+</script>
+
+
+
+
+</body>
+</html>
